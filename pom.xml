@@ -3,7 +3,8 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>3.6</version>
+    <version>4.51</version>
+    <relativePath/>
   </parent>
 
   <groupId>org.jenkins-ci.plugins</groupId>
@@ -16,15 +17,24 @@
   <description>AWS Device Farm Jenkins Plugin</description>
 
   <properties>
-    <jenkins.version>2.138.4</jenkins.version>
-    <java.level>8</java.level>
+    <jenkins.version>2.346.3</jenkins.version>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-2.138.x</artifactId>
+        <version>4</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>junit</artifactId>
-      <version>1.28</version>
     </dependency>
 
     <!-- TODO: use AWS SDK Plugin instead: https://plugins.jenkins.io/aws-java-sdk -->
@@ -63,7 +73,6 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>scm-api</artifactId>
-      <version>2.2.6</version>
     </dependency>
   </dependencies>
 
